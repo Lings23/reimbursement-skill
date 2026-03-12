@@ -1,0 +1,18 @@
+# 加班餐费报销工具依赖
+# 使用方法：pip install -r requirements.txt
+
+# PDF 处理
+pdf2image>=1.16.3
+pdftotext>=2.2.0
+pdfplumber>=0.10.0
+
+# 文档处理
+python-docx>=1.1.0
+
+# 图片处理
+Pillow>=10.0.0
+
+# 系统依赖（需要单独安装）
+# Ubuntu/Debian: sudo apt-get install poppler-utils
+# macOS: brew install poppler
+# CentOS/RHEL: sudo yum install poppler-utils

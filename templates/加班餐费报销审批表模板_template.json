@@ -1,0 +1,105 @@
+{
+    "template_name": "加班餐费报销审批表",
+    "version": "2.0",
+    "created": "2026-03-11",
+    "source_doc": "templates/加班餐费报销审批表模板.docx",
+    "description": "从文档自动生成的模板",
+    "document_structure": {
+        "table_index": 0,
+        "total_rows": 13,
+        "total_cols": 6
+    },
+    "fields": {
+        "部门": {
+            "type": "text",
+            "row": 11,
+            "col": 1,
+            "default": ""
+        },
+        "支出账号": {
+            "type": "text",
+            "row": 0,
+            "col": 4,
+            "label_cell": {
+                "row": 0,
+                "col": 3
+            }
+        },
+        "用餐人数": {
+            "type": "number",
+            "row": 1,
+            "col": 1,
+            "label_cell": {
+                "row": 1,
+                "col": 0
+            }
+        },
+        "用餐金额": {
+            "type": "currency",
+            "row": 1,
+            "col": 4,
+            "label_cell": {
+                "row": 1,
+                "col": 3
+            },
+            "unit": "元"
+        },
+        "加班事由": {
+            "type": "text",
+            "row": 2,
+            "col": 1,
+            "label_cell": {
+                "row": 2,
+                "col": 0
+            },
+            "merge_cols": [
+                1,
+                2,
+                3,
+                4,
+                5
+            ]
+        },
+        "用餐人员名单": {
+            "type": "name_list",
+            "header_row": 4,
+            "data_start_row": 5,
+            "data_end_row": 9,
+            "name_columns": [
+                {
+                    "col": 1,
+                    "seq_col": 0,
+                    "max_items": 4
+                },
+                {
+                    "col": 3,
+                    "seq_col": 2,
+                    "max_items": 4
+                },
+                {
+                    "col": 5,
+                    "seq_col": 4,
+                    "max_items": 4
+                }
+            ]
+        }
+    },
+    "validation_rules": {
+        "用餐人数": {
+            "min": 1,
+            "max": 12,
+            "must_match_name_count": true
+        },
+        "用餐金额": {
+            "min": 0,
+            "max": 10000,
+            "currency": "CNY"
+        }
+    },
+    "auto_fill": {
+        "用餐人数": {
+            "source": "name_list_count",
+            "description": "自动计算姓名数量"
+        }
+    }
+}
